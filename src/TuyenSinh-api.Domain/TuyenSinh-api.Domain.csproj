@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>TuyenSinh_api.Domain</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Entities\" />
+    <None Remove="Common\" />
+    <None Remove="Enum\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Core" />
+    <None Remove="Authenitication\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Common\" />
+    <Folder Include="Enum\" />
+    <Folder Include="Authenitication\" />
+  </ItemGroup>
+</Project>

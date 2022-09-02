@@ -1,0 +1,111 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>TuyenSinh_api.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Contracts\" />
+    <None Remove="Contracts\Persistence\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Contracts\Infrastructure\" />
+    <None Remove="Common\" />
+    <None Remove="Common\Interface\" />
+    <None Remove="Common\Interfaces\Authentication\" />
+    <None Remove="Common\Interfaces\Services\" />
+    <None Remove="Middleware\" />
+    <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Exceptions\" />
+    <None Remove="FluentValidation.AspNetCore" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Features\" />
+    <None Remove="Features\Authentication\" />
+    <None Remove="Features\Authentication\Queries\" />
+    <None Remove="Features\Authentication\Queries\Login\" />
+    <None Remove="Features\User\Queries\" />
+    <None Remove="Features\User\Queries\GetUserList\" />
+    <None Remove="Profiles\" />
+    <None Remove="AutoMapper" />
+    <None Remove="Features\Base\" />
+    <None Remove="Features\Base\Queries\" />
+    <None Remove="Features\Base\Queries\GetList\" />
+    <None Remove="Autofac.Extensions.DependencyInjection" />
+    <None Remove="Features\Common\Queries\GetDetail\" />
+    <None Remove="Features\Common\Commands\" />
+    <None Remove="Features\Common\Commands\Create\" />
+    <None Remove="Features\User\Commands\" />
+    <None Remove="Features\User\Commands\CreateUser\" />
+    <None Remove="Features\Common\Commands\Update\" />
+    <None Remove="Features\User\Commands\UpdateUser\" />
+    <None Remove="Features\Common\Commands\Delete\" />
+    <None Remove="Features\User\Commands\DeleteUser\" />
+    <None Remove="Features\Common\Queries\Export\" />
+    <None Remove="Features\User\Queries\ExportUser\" />
+    <None Remove="Features\Template\" />
+    <None Remove="Features\Template\Queries\" />
+    <None Remove="Features\Template\Queries\GetTemplates\" />
+    <None Remove="Features\Template\Queries\TemplateExportVm\" />
+    <None Remove="Features\Template\Commands`\" />
+    <None Remove="Features\Template\Commands\CreateTemplate\" />
+    <None Remove="Features\Template\Commands\UpdateTemplate\" />
+    <None Remove="Features\Template\Commands\DeleteTemplate\" />
+    <None Remove="Features\User\Dtos\" />
+    <None Remove="Features\_Template\Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\Persistence\" />
+    <Folder Include="Contracts\Infrastructure\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Interfaces\" />
+    <Folder Include="Common\Interfaces\Authentication\" />
+    <Folder Include="Common\Interfaces\Services\" />
+    <Folder Include="Features\User\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Features\Authentication\" />
+    <Folder Include="Features\Authentication\Queries\" />
+    <Folder Include="Features\Authentication\Queries\Login\" />
+    <Folder Include="Features\User\Queries\" />
+    <Folder Include="Features\User\Queries\GetUsers\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Features\Common\" />
+    <Folder Include="Features\Common\Queries\" />
+    <Folder Include="Features\Common\Queries\GetList\" />
+    <Folder Include="Features\Common\Queries\GetDetail\" />
+    <Folder Include="Features\Common\Commands\" />
+    <Folder Include="Features\Common\Commands\Create\" />
+    <Folder Include="Features\User\Commands\" />
+    <Folder Include="Features\User\Commands\CreateUser\" />
+    <Folder Include="Features\Common\Commands\Update\" />
+    <Folder Include="Features\User\Commands\UpdateUser\" />
+    <Folder Include="Features\Common\Commands\Delete\" />
+    <Folder Include="Features\User\Commands\DeleteUser\" />
+    <Folder Include="Features\Common\Queries\Export\" />
+    <Folder Include="Features\User\Queries\ExportUser\" />
+    <Folder Include="Features\_Template\" />
+    <Folder Include="Features\_Template\Queries\" />
+    <Folder Include="Features\_Template\Commands\" />
+    <Folder Include="Features\_Template\Commands\CreateTemplate\" />
+    <Folder Include="Features\_Template\Commands\UpdateTemplate\" />
+    <Folder Include="Features\_Template\Commands\DeleteTemplate\" />
+    <Folder Include="Features\User\Dtos\" />
+    <Folder Include="Features\_Template\Dtos\" />
+    <!--generate_folder-->
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TuyenSinh-api.Domain\TuyenSinh-api.Domain.csproj" />
+  </ItemGroup>
+</Project>

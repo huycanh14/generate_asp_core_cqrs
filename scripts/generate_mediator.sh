@@ -8,10 +8,24 @@
 model=$1
 echo "Model is: $model";
 model_all=$1;
+name_controller=$1;
+end_code=['s','ss','sh','ch', 'z', 'x'];
+# end_code=(s ss sh ch z x)
+# case "${myarray[@]}" in  *"two"*) echo "found" ;; esac
 # tao folder
 if [[ $model == *y ]] # * is used for pattern matching
 then
 	model_all=${model_all:0:$((${#model_all}-1))}ies
+	name_controller=${model_all:0:$((${#model_all}-1))}ies
+elif [[ $model == *s || $model == *ss || $model == *sh || $model == *ch || $model == *z || $model == *x ]]; then # * is used for pattern matching
+	model_all=${model_all:0:$((${#model_all}))}es
+	name_controller=${model_all:0:$((${#model_all}))}es
+# elif [[  "${end_code[${model:(-1)}]}" ]]; then # * is used for pattern matching
+# 	model_all=${model_all:0:$((${#model_all}))}es
+# 	name_controller=${model_all:0:$((${#model_all}))}es
+else
+	model_all=${model_all:0:$((${#model_all}))}s
+	name_controller=${model_all:0:$((${#model_all}))}s
 fi
 path_application="../src/TuyenSinh-api.Application/Features/${model}"
 rm -r $path_application
@@ -120,6 +134,7 @@ if [ ! -f "${path_controller}" ]; then
 	sed -i.back  "s/_Template/${model_all}/g" $path_controller
 	text_extend_controller="\n\t: BaseController< \n\
 	\t${namespace_dto}.${model}Dto, \n\
+	\t${namespace_dto}.${model}ExportVm, \n\
 	\t${namespace_entity}, \n\
 	\t${namespace_command}.Create${model}.Create${model}CommandValidator, \n\
 	\t${namespace_command}.Update${model}.Update${model}CommandValidator \n\

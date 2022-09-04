@@ -4,13 +4,14 @@ using TuyenSinh_api.Api.Common;
 using TuyenSinh_api.Application.Features.User.Commands.CreateUser;
 using TuyenSinh_api.Application.Features.User.Commands.UpdateUser;
 using TuyenSinh_api.Application.Features.User.Dtos;
+using TuyenSinh_api.Application.Features.User.Queries.ExportUser;
 using TuyenSinh_api.Domain.Entities;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TuyenSinh_api.Api.Controllers
 {
-    public class UsersController : BaseController<UserDto, User, CreateUserCommandValidator, UpdateUserCommandValidator>
+    public class UsersController : BaseController<UserDto, UserExportVm, User, CreateUserCommandValidator, UpdateUserCommandValidator>
     {
         private readonly ILogger<UsersController> _logger;
         private readonly IMediator _mediator;

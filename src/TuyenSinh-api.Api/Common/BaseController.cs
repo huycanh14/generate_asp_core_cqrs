@@ -22,17 +22,18 @@ namespace TuyenSinh_api.Api.Common
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BaseController<TDto, TEntiy, TValidatorCreate, TValidatorUpdate> : ControllerBase
+    public class BaseController<TDto, TExportVm, TEntiy, TValidatorCreate, TValidatorUpdate> : ControllerBase
         where TDto : class
+        where TExportVm : class
         where TEntiy : class
         where TValidatorCreate : class
         where TValidatorUpdate : class
     {
         private IMediator _mediator;
-        private readonly ILogger<BaseController<TDto, TEntiy, TValidatorCreate, TValidatorUpdate>> _logger;
+        private readonly ILogger<BaseController<TDto, TExportVm, TEntiy, TValidatorCreate, TValidatorUpdate>> _logger;
 
 
-        public BaseController(ILogger<BaseController<TDto, TEntiy, TValidatorCreate, TValidatorUpdate>> logger, IMediator mediator)
+        public BaseController(ILogger<BaseController<TDto, TExportVm, TEntiy, TValidatorCreate, TValidatorUpdate>> logger, IMediator mediator)
         {
             _logger = logger;
             _mediator = mediator;
@@ -51,8 +52,8 @@ namespace TuyenSinh_api.Api.Common
         [HttpGet("export")]
         public async Task<IActionResult> ExportDataExcel([FromQuery] FilterBase<TEntiy> filters, string title = "Danh sach", string filelName = null)
         {
-            _logger.LogInformation($"BaseController@ExportData -- Start, data: {filters} {typeof(TDto)} {typeof(TEntiy)}");
-            CommonExportExcelQuery<TDto, TEntiy> getListQuery = new CommonExportExcelQuery<TDto, TEntiy> { filter = filters, Title = title };
+            _logger.LogInformation($"BaseController@ExportData -- Start, data: {filters} {typeof(TExportVm)} {typeof(TEntiy)}");
+            CommonExportExcelQuery<TExportVm, TEntiy> getListQuery = new CommonExportExcelQuery<TExportVm, TEntiy> { filter = filters, Title = title };
             var response = await _mediator.Send(getListQuery);
             _logger.LogInformation("BaseController@ExportData -- End");
             return File(response.Data, response.ContentType, filelName ?? response.ExportFileName);

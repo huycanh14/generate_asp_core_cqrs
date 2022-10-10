@@ -1,5 +1,6 @@
 docker build -t sql-serve  .   
 docker run -d -p 1433:1433 --name SQLServer -d sql-serve
+
 docker exec -it SQLServer /bin/sh
 
 <!-- docker exec -it SQLServer /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P P@ssw0rd -->
